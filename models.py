@@ -7,8 +7,7 @@ class MarketDataPoint:
     timestamp: datetime
     symbol: str
     price: float
-
-
+    
 class Strategy(ABC):
 
     @abstractmethod
