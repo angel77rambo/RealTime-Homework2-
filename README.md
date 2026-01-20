@@ -24,7 +24,7 @@ This project explores the impact of algorithmic design on the performance of fin
 
 ## Usage
 
-You can run the analysis using the main script. If you have a `market_data.csv` file in the root directory:
+You can run the analysis using the main script. If you have a `stock_data_A share.csv` file in the root directory:
 
 ```bash
-python main.py
+main.py
