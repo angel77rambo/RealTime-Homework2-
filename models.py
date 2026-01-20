@@ -1,23 +1,26 @@
+import abc
 from dataclasses import dataclass
 from datetime import datetime
-from abc import ABC, abstractmethod
+from typing import Optional
+import pandas as pd
 
 @dataclass(frozen=True)
 class MarketDataPoint:
     """
-    Immutable market data structure.
+    Immutable data point representing a single market tick.
     """
     timestamp: datetime
     symbol: str
     price: float
 
-
-class Strategy(ABC):
+class Strategy(abc.ABC):
     """
-    Abstract base class for trading strategies.
+    Abstract Base Class for all trading strategies.
     """
-
-    @abstractmethod
-    def generate_signals(self, tick: MarketDataPoint) -> list:
+    @abc.abstractmethod
+    def generate_signals(self, tick: MarketDataPoint) -> Optional[str]:
         pass
 
+    @abc.abstractmethod
+    def name(self) -> str:
+        pass
